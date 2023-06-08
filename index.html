@@ -61,10 +61,10 @@
 
             // This function retrieves the correct city of Brentwood using the zip code and country allowing for the ability to pull longitude and latitude
             citySearch() {
-                let weatherKey = "b9daa77b622e6f5493a6d100e8742c5a";
+                let weatherKey = "b8b18fd8c248f96e6426c2dc9a671a54";
                 let zipCode = "37027";
                 let countryCode = "us";
-                let geoLocation = `api.openweathermap.org/geo/1.0/zip?zip=${zipCode},${countryCode}&appid=${weatherKey}`;
+                let geoLocation = `https://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},${countryCode}&appid=${weatherKey}`;
                 axios.get(geoLocation)
                     .then((res) => {
                         return res.data;
@@ -81,8 +81,8 @@
 
             // This function is built to obtain the five day forecast using another API call in combination with a template literal using the data we obtained from the citySearch() function.
             fiveDayForecast(geoData) {
-                let weatherKey = "b9daa77b622e6f5493a6d100e8742c5a";
-                let fiveDayURL = `api.openweathermap.org/data/2.5/forecast?lat=${geoData.lat}&lon=${geoData.lon}&units=imperial&appid=${weatherKey}`;
+                let weatherKey = "b8b18fd8c248f96e6426c2dc9a671a54";
+                let fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${geoData.lat}&lon=${geoData.lon}&units=imperial&appid=${weatherKey}`;
                 axios.get(fiveDayURL)
                     .then((res) => {
                         return res.data;
